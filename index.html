@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="./lib/d3.v4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="static/js/framework/jquery-3.6.0.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}" /> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
+ 
+    <script src="static/js/screeplot.js"></script>
+    <script src="static/js/scatterplot_matrix.js"></script>
+    <script src="static/js/feature_table_generator.js"></script>
+    <script src="static/js/biplot.js"></script>
+    <script src="static/js/elbow.js"></script>
+    
+    <script src="static/js/mds_scatterplot.js"></script>
+    <script src="static/js/pcp.js"></script>
+    <script src="static/js/index.js"></script>
+    <title>CSE564 Lab 2</title>
+</head>
+
+<body>
+    <nav class="navbar-inverse">
+        <div class="container-fluid">
+            <ul class="">
+                <li id="nav-home"><a href="#">Home</a></li>
+                <li><a id="nav-screeplot" href="#">Scree Plot</a></li>
+                <li><a id="nav-biplot" href="#">Biplot</a></li>
+                <li><a id="nav-elbow" href="#">Elbow Method</a></li>
+                <li><a id="nav-mds" href="#">MDS Plot</a></li>
+                <li><a id="nav-mds-corr" href="#">Parallel Coordinate Plot</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="home">
+            <h3>Dataset Information: FIFA22 Dataset.</h3><br>
+            
+            <h3>Link to dataset</h3>
+            <a style="font-size:1em;" href="https://www.kaggle.com/cashncarry/fifa-22-complete-player-dataset">https://www.kaggle.com/cashncarry/fifa-22-complete-player-dataset</a><br>
+            <h3>About Data</h3>
+            <p>Data for this assignment(Lab2) is obtained from Kaggle. It contains all the data about all the fifa 22 player's attributes and information.</p>
+            
+            <h2>Attributes</h2>
+            <ol class="list-attributes">
+                <li class="list-attributes-elemetn">Name: Players Name (categorical variable)</li><br>
+                <li class="list-attributes-elemetn">Age: Player's Age</li><br>
+                <li class="list-attributes-elemetn">Height: Player's Height in cms</li><br>
+                <li class="list-attributes-elemetn">Overall: Player's Overall Rating in FIFA 22</li><br>
+                <li class="list-attributes-elemetn">BestPosition: Player's Best Position in FIFA 22 (categorical variable)</li><br>
+                <li class="list-attributes-elemetn">SkillMoves: Player's SKill Moves (5 star, 4 star, 3 star, 2 star, 1 star) Rating (categorical variable)</li><br>
+                <li class="list-attributes-elemetn">PaceTotal: Speed at which the player can run</li><br>
+                <li class="list-attributes-elemetn">ShootingTotal: Shooting attribute score</li><br>
+                <li class="list-attributes-elemetn">PassingTotal: Passing attribute score</li><br>
+                <li class="list-attributes-elemetn">DribblingTotal: Dribbling attribute score</li><br>
+                <li class="list-attributes-elemetn">DefendingTotal: Defending attribute score</li><br>
+                <li class="list-attributes-elemetn">Jumping: Jumping attribute score</li><br>
+                <li class="list-attributes-elemetn">Finishing: Finishing attribute score</li><br>
+                <li class="list-attributes-elemetn">Vision: Player's Vision Capability</li><br>
+                <li class="list-attributes-elemetn">BallControl: Player's Ball Control Capability</li><br>
+                <li class="list-attributes-elemetn">FKAccuracy: Free kick accuracy</li><br><br>
+            </ol>
+        </div>
+        <div class="scree-plot">
+            <div class="grid-container">
+                <div class="item1">
+                    <p style="color:rgb(130, 17, 153); font-weight: bold; font-size: 21px;"> Intrinsic Dimensionality Index : <span id='intrinsic-dimentionality-index'>None</span></p>
+                    <div id="scree-plot-graph"></div>
+
+                </div>
+                <div class="item2">
+                    <div id="imp-features-table-div" style="margin-top: -30%;"></div>
+                </div>
+                <div class="item3">
+                    <div id="scatterplot-matrix"></div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <div class="biplot">
+        <div id="biplot-graph"></div>
+    </div>
+    
+    <div class="col-md-10 col-xl-10 col-lg-10 col-sm-12 col-xs-12" id="lineplotContainer"></div>
+
+    <div class="mds">
+        <div id="group-buttons-mds"></div>
+        <div id="mds-scatterplot-graph-data"></div>
+    </div>
+    <div class="mds-corr">
+        <button id="reset-pcp-and-mds" style="margin-right: 300px; margin-top: 40px;">Reset</button>
+        <div id="mds-scatterplot-graph-attr" style="float: left;"></div>
+        <div id="pcp-graph"></div>
+    </div>
+
+</body>
+</html>

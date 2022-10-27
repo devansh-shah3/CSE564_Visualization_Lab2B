@@ -1,0 +1,239 @@
+body {
+    font-family: sans-serif;
+    overflow: auto;
+}
+
+#heading-assignment {
+    font-size: 3.5em;
+}
+
+#heading {
+    text-align: center;
+    /* font-weight: bold; */
+}
+
+.navbar {
+    font-size: 1.5em;
+}
+
+text {
+    font-size: 1.5em;
+}
+
+.container {
+    margin: 0%;
+    width: auto;
+}
+
+.home {
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 1.3em;
+}
+
+p {
+    font-size: 1.3em;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.item1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.item2 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.item3 {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+
+.biplot {
+    padding-right: 10%;
+    padding-left: 10%;
+}
+
+
+svg {
+    font: 10px sans-serif;
+    padding: 12px;
+}
+
+table {
+    width: 85%;
+    border: 1.3px solid black;
+    text-align: center;
+    font-size: 1.3em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td {
+    border: 1.3px solid black;
+    font-size: 1em;
+}
+
+.head-table {
+    background-color: rgb(192, 165, 216);
+}
+
+.table-content {
+    background-color: rgb(214, 226, 253);
+}
+
+.foreground path {
+    fill: none;
+    stroke: steelblue;
+}
+
+.foreground path.fade {
+    stroke: #000;
+    stroke-opacity: .05;
+}
+
+.background path {
+    fill: none;
+    stroke: #ddd;
+    shape-rendering: crispEdges;
+}
+
+.brush .extent .selection {
+    /*fill: red;*/
+    fill-opacity: .3;
+    stroke: #fff;
+    shape-rendering: crispEdges;
+}
+
+.axis-scatterplotmatrix,
+.frame {
+    shape-rendering: crispEdges;
+}
+
+.axis-scatterplotmatrix line {
+    stroke: #b1b0b0;
+    opacity: 0.5;
+}
+
+.axis-scatterplotmatrix path {
+    display: none;
+}
+
+.axis-scatterplotmatrix text {
+    fill: black;
+}
+
+.cell text {
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 15px;
+    fill: #222;
+}
+
+.frame {
+    fill: none;
+    stroke: #aaa;
+}
+
+.diagonal {
+    stroke: none;
+    fill: rgb(238, 238, 238);
+    fill-opacity: 0.9;
+}
+
+circle {
+    fill-opacity: .7;
+}
+
+circle.hidden {
+    fill: #ccc !important;
+}
+
+.extent {
+    fill: #000;
+    fill-opacity: .125;
+    stroke: #fff;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 0.7rem;
+    background: #313639;
+    color: #f9f9f9;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    font-size: .7rem;
+    white-space: pre-wrap;
+    font-size: 1.5em;
+}
+
+.brush .extent {
+    fill-opacity: .3;
+    stroke: #fff;
+    shape-rendering: crispEdges;
+}
+
+.mds {
+    padding-left: 5%;
+}
+
+#reset-pcp-and-mds {
+    display: inline-block;
+    padding: 5px 5px;
+    font-size: 15px;
+    width: 70px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #5045dd;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px rgb(71, 71, 71);
+}
+#reset-pcp-and-mds:hover {
+    background-color: #cc2f2f
+}
+#reset-pcp-and-mds:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.foreground path {
+    fill: none;
+    stroke: steelblue;
+}
+
+.axis-pcp line,
+.axis-pcp path {
+    fill: none;
+    stroke: #000;
+    stroke-width: 2px;
+    shape-rendering: crispEdges;
+}
+
+.axis-pcp text {
+    text-shadow: 0 1px 0 #fff;
+    cursor: move;
+    font-size: 13pt;
+    fill: black;
+}
